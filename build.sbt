@@ -11,11 +11,17 @@ lazy val root = (project in file("."))
 libraryDependencies ++= Seq(
   "dev.zio" %% "zio" % "2.0.9",
   "dev.zio" %% "zio-streams" % "2.0.9",
-  "dev.zio" %% "zio-kafka" % "2.9.0",
   "dev.zio" %% "zio-json" % "0.7.4",
+  // kafka
+  "dev.zio" %% "zio-kafka" % "2.9.0",
+  "dev.zio" %% "zio-kafka-testkit" % "2.9.0" % Test,
+  // config
+  "dev.zio" %% "zio-config" % "4.0.3",
+  "dev.zio" %% "zio-config-typesafe" % "4.0.3",
+  "dev.zio" %% "zio-config-magnolia" % "4.0.3",
+  // spark
   "org.apache.spark" % "spark-core_2.13" % "3.5.0",
   "org.apache.spark" % "spark-sql_2.13" % "3.5.0",
-  "dev.zio" %% "zio-kafka-testkit" % "2.9.0" % Test,
 )
 
 dependencyOverrides += "com.github.luben" % "zstd-jni" % "1.5.6-4"
